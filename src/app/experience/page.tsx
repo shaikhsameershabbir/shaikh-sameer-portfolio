@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Building, Award, Users, Code } from 'lucide-react';
+import { Calendar, MapPin, Building, Award, Code } from 'lucide-react';
 
 export default function Experience() {
     const experiences = [
@@ -141,9 +141,24 @@ export default function Experience() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Work <span className="gradient-text">Experience</span>
-                    </h1>
+                    <motion.h1
+                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                    >
+                        Work{" "}
+                        <motion.span
+                            className="gradient-text-blue"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Experience
+                        </motion.span>
+                    </motion.h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                         My professional journey in software development, showcasing growth, achievements, and continuous learning.
                     </p>
@@ -156,7 +171,25 @@ export default function Experience() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-12 text-center">Professional Experience</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white mb-12 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Professional{" "}
+                        <motion.span
+                            className="gradient-text-purple"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Experience
+                        </motion.span>
+                    </motion.h2>
                     <div className="space-y-8">
                         {experiences.map((exp, index) => (
                             <motion.div
@@ -252,7 +285,24 @@ export default function Experience() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-12 text-center">Education</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white mb-12 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <motion.span
+                            className="gradient-text-green"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Education
+                        </motion.span>
+                    </motion.h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {education.map((edu, index) => (
                             <motion.div
@@ -300,7 +350,24 @@ export default function Experience() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-12 text-center">Certifications</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white mb-12 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <motion.span
+                            className="gradient-text-blue"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Certifications
+                        </motion.span>
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {certifications.map((cert, index) => (
                             <motion.div
@@ -332,10 +399,28 @@ export default function Experience() {
                     className="text-center"
                 >
                     <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Ready to Work Together?</h2>
+                        <motion.h2
+                            className="text-3xl font-display font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            Ready to Work{" "}
+                            <motion.span
+                                className="gradient-text-purple"
+                                whileHover={{
+                                    scale: 1.1,
+                                    rotate: [0, -5, 5, -5, 0],
+                                    transition: { duration: 0.5 }
+                                }}
+                            >
+                                Together?
+                            </motion.span>
+                        </motion.h2>
                         <p className="text-gray-300 mb-6">
                             I bring a wealth of experience and a passion for creating exceptional digital experiences.
-                            Let's discuss how I can contribute to your next project.
+                            Let&apos;s discuss how I can contribute to your next project.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a

@@ -31,7 +31,7 @@ export default function Contact() {
             await new Promise(resolve => setTimeout(resolve, 2000));
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-        } catch (error) {
+        } catch {
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
@@ -93,12 +93,27 @@ export default function Contact() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Get In <span className="gradient-text">Touch</span>
-                    </h1>
+                    <motion.h1
+                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                    >
+                        Get In{" "}
+                        <motion.span
+                            className="gradient-text-blue"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Touch
+                        </motion.span>
+                    </motion.h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Have a project in mind or just want to chat? I'd love to hear from you.
-                        Let's create something amazing together.
+                        Have a project in mind or just want to chat? I&apos;d love to hear from you.
+                        Let&apos;s create something amazing together.
                     </p>
                 </motion.div>
 
@@ -110,7 +125,7 @@ export default function Contact() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="glass rounded-2xl p-8"
                     >
-                        <h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
+                        <h2 className="text-2xl font-heading font-bold text-white mb-6">Send me a message</h2>
 
                         {submitStatus === 'success' && (
                             <motion.div
@@ -227,7 +242,7 @@ export default function Contact() {
                     >
                         {/* Contact Details */}
                         <div className="glass rounded-2xl p-8">
-                            <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
+                            <h2 className="text-2xl font-heading font-bold text-white mb-6">Contact Information</h2>
                             <div className="space-y-6">
                                 {contactInfo.map((info, index) => {
                                     const Icon = info.icon;
@@ -255,7 +270,7 @@ export default function Contact() {
 
                         {/* Social Links */}
                         <div className="glass rounded-2xl p-8">
-                            <h2 className="text-2xl font-bold text-white mb-6">Follow Me</h2>
+                            <h2 className="text-2xl font-heading font-bold text-white mb-6">Follow Me</h2>
                             <div className="flex gap-4">
                                 {socialLinks.map((social, index) => {
                                     const Icon = social.icon;
@@ -280,7 +295,7 @@ export default function Contact() {
 
                         {/* Quick Response */}
                         <div className="glass rounded-2xl p-8">
-                            <h2 className="text-2xl font-bold text-white mb-4">Quick Response</h2>
+                            <h2 className="text-2xl font-heading font-bold text-white mb-4">Quick Response</h2>
                             <p className="text-gray-300 mb-4">
                                 I typically respond to messages within 24 hours. For urgent inquiries,
                                 feel free to reach out via phone or LinkedIn.
@@ -301,10 +316,28 @@ export default function Contact() {
                     className="mt-20 text-center"
                 >
                     <div className="glass rounded-2xl p-8 max-w-4xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Let's Build Something Amazing</h2>
+                        <motion.h2
+                            className="text-3xl font-display font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            Let&apos;s Build Something{" "}
+                            <motion.span
+                                className="gradient-text-purple"
+                                whileHover={{
+                                    scale: 1.1,
+                                    rotate: [0, -5, 5, -5, 0],
+                                    transition: { duration: 0.5 }
+                                }}
+                            >
+                                Amazing
+                            </motion.span>
+                        </motion.h2>
                         <p className="text-gray-300 mb-6">
                             Whether you have a specific project in mind or just want to explore possibilities,
-                            I'm here to help bring your ideas to life. Let's discuss your vision and see how
+                            I&apos;m here to help bring your ideas to life. Let&apos;s discuss your vision and see how
                             we can make it a reality.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">

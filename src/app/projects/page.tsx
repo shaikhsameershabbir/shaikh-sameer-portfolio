@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ExternalLink, Github, Play } from 'lucide-react';
 
 export default function Projects() {
@@ -81,9 +82,24 @@ export default function Projects() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        My <span className="gradient-text">Projects</span>
-                    </h1>
+                    <motion.h1
+                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                    >
+                        My{" "}
+                        <motion.span
+                            className="gradient-text-blue"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Projects
+                        </motion.span>
+                    </motion.h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                         A showcase of my recent work and side projects. Each project represents a unique challenge and learning opportunity.
                     </p>
@@ -96,7 +112,25 @@ export default function Projects() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white mb-12 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Featured{" "}
+                        <motion.span
+                            className="gradient-text-purple"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Projects
+                        </motion.span>
+                    </motion.h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {featuredProjects.map((project, index) => (
                             <motion.div
@@ -108,10 +142,11 @@ export default function Projects() {
                             >
                                 {/* Project Image */}
                                 <div className="relative h-64 overflow-hidden">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div className="flex gap-4">
@@ -188,7 +223,25 @@ export default function Projects() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-12 text-center">Other Projects</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white mb-12 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Other{" "}
+                        <motion.span
+                            className="gradient-text-green"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Projects
+                        </motion.span>
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {otherProjects.map((project, index) => (
                             <motion.div
@@ -200,10 +253,11 @@ export default function Projects() {
                             >
                                 {/* Project Image */}
                                 <div className="relative h-48 overflow-hidden">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div className="flex gap-3">
@@ -286,10 +340,28 @@ export default function Projects() {
                     className="text-center"
                 >
                     <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Interested in Working Together?</h2>
+                        <motion.h2
+                            className="text-3xl font-display font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            Interested in Working{" "}
+                            <motion.span
+                                className="gradient-text-blue"
+                                whileHover={{
+                                    scale: 1.1,
+                                    rotate: [0, -5, 5, -5, 0],
+                                    transition: { duration: 0.5 }
+                                }}
+                            >
+                                Together?
+                            </motion.span>
+                        </motion.h2>
                         <p className="text-gray-300 mb-6">
-                            I'm always excited to take on new challenges and create amazing digital experiences.
-                            Let's discuss your next project!
+                            I&apos;m always excited to take on new challenges and create amazing digital experiences.
+                            Let&apos;s discuss your next project!
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a

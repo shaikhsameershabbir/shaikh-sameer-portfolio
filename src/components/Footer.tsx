@@ -38,7 +38,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Brand Section */}
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-white">Shaikh Sameer</h3>
+                        <h3 className="text-2xl font-display font-bold text-white">Shaikh Sameer</h3>
                         <p className="text-gray-400">
                             Full Stack Developer specializing in MERN stack. Building modern web applications with clean, efficient code.
                         </p>
@@ -63,7 +63,7 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+                        <h4 className="text-lg font-heading font-semibold text-white">Quick Links</h4>
                         <ul className="space-y-2">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
@@ -81,7 +81,7 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
+                        <h4 className="text-lg font-heading font-semibold text-white">Get In Touch</h4>
                         <div className="space-y-2">
                             <p className="text-gray-400">
                                 <span className="font-medium">Email:</span> shaikhsameer@example.com

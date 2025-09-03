@@ -72,9 +72,24 @@ export default function About() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        About <span className="gradient-text">Me</span>
-                    </h1>
+                    <motion.h1
+                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                    >
+                        About{" "}
+                        <motion.span
+                            className="gradient-text-blue"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Me
+                        </motion.span>
+                    </motion.h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                         Passionate about creating digital experiences that make a difference
                     </p>
@@ -89,21 +104,21 @@ export default function About() {
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl font-bold text-white mb-6">Professional Summary</h2>
+                            <h2 className="text-3xl font-heading font-bold text-white mb-6">Professional Summary</h2>
                             <div className="space-y-4 text-gray-300 leading-relaxed">
                                 <p>
-                                    I'm a passionate Full Stack Developer with over 3 years of experience in building
-                                    modern web applications. My expertise lies in the MERN stack, and I'm dedicated
+                                    I&apos;m a passionate Full Stack Developer with over 3 years of experience in building
+                                    modern web applications. My expertise lies in the MERN stack, and I&apos;m dedicated
                                     to creating scalable, efficient, and user-friendly solutions.
                                 </p>
                                 <p>
-                                    Throughout my career, I've had the opportunity to work on diverse projects ranging
+                                    Throughout my career, I&apos;ve had the opportunity to work on diverse projects ranging
                                     from e-commerce platforms to real-time applications. I believe in writing clean,
                                     maintainable code and following industry best practices.
                                 </p>
                                 <p>
-                                    When I'm not coding, you'll find me exploring new technologies, contributing to
-                                    open-source projects, or sharing knowledge with the developer community. I'm
+                                    When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to
+                                    open-source projects, or sharing knowledge with the developer community. I&apos;m
                                     always eager to learn and grow in this ever-evolving field.
                                 </p>
                             </div>
@@ -144,7 +159,25 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white text-center mb-12">Skills & Technologies</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white text-center mb-12"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Skills &{" "}
+                        <motion.span
+                            className="gradient-text-purple"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Technologies
+                        </motion.span>
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {skills.map((skill, index) => {
                             const Icon = skill.icon;
@@ -183,7 +216,25 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl font-bold text-white text-center mb-12">Experience Timeline</h2>
+                    <motion.h2
+                        className="text-4xl font-display font-bold text-white text-center mb-12"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Experience{" "}
+                        <motion.span
+                            className="gradient-text-green"
+                            whileHover={{
+                                scale: 1.1,
+                                rotate: [0, -5, 5, -5, 0],
+                                transition: { duration: 0.5 }
+                            }}
+                        >
+                            Timeline
+                        </motion.span>
+                    </motion.h2>
                     <div className="relative">
                         {/* Timeline line */}
                         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-700"></div>
@@ -234,10 +285,10 @@ export default function About() {
                     className="text-center"
                 >
                     <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Let's Work Together</h2>
+                        <h2 className="text-2xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
                         <p className="text-gray-300 mb-6">
-                            I'm always interested in new opportunities and exciting projects.
-                            Let's discuss how we can bring your ideas to life.
+                            I&apos;m always interested in new opportunities and exciting projects.
+                            Let&apos;s discuss how we can bring your ideas to life.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
