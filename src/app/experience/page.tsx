@@ -1,445 +1,265 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Building, Award, Code } from 'lucide-react';
+import { MapPin, Building, Award } from 'lucide-react';
+
+const experiences = [
+  {
+    id: 1,
+    title: 'Senior Software Engineer',
+    company: 'Coreline IT Solutions',
+    location: 'Aurangabad, India',
+    duration: 'Feb 2025 – Present',
+    current: true,
+    description: 'Leading development of scalable web applications and mentoring junior developers.',
+    achievements: [
+      'Architected scalable backend services supporting enterprise applications for multiple client organizations',
+      'Developed responsive admin dashboards using Next.js, React.js and Tailwind CSS for enterprise workflows',
+      'Led engineering team of 6 developers delivering web platforms, internal tools, and SaaS applications',
+      'Increased API performance by 40%',
+      'Established CI/CD pipelines enabling automated deployments, reducing release time by 60%',
+      'Implemented reusable frontend components and optimized UI rendering',
+      'Guided junior developers through code reviews, architectural discussions, and performance optimization',
+    ],
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'CI/CD', 'TypeScript'],
+  },
+  {
+    id: 2,
+    title: 'Software Engineer',
+    company: 'Moksha Solutions',
+    location: 'Aurangabad, India',
+    duration: 'Jun 2024 – Jan 2025',
+    current: false,
+    description: 'Engineered backend services for healthcare and logistics applications.',
+    achievements: [
+      'Engineered backend services powering applications in healthcare and logistics sectors',
+      'Accelerated API response times by redesigning database indexes and improving query execution',
+      'Collaborated with frontend teams to implement responsive UI features using React.js',
+      'Collaborated with cross-functional teams delivering production features across multiple client projects',
+      'Strengthened application stability through debugging, monitoring, and automated testing',
+    ],
+    technologies: ['Node.js', 'React', 'PostgreSQL', 'REST APIs'],
+  },
+  {
+    id: 3,
+    title: 'Full Stack Developer',
+    company: 'ARA Global',
+    location: 'Aurangabad, India',
+    duration: 'Feb 2023 – Apr 2024',
+    current: false,
+    description: 'Built internal enterprise applications for 500+ employees.',
+    achievements: [
+      'Built internal enterprise applications supporting operations for 500+ employees',
+      'Delivered complete ERP platform including HR payroll, attendance tracking, and reporting dashboards',
+      'Developed responsive frontend dashboards using React.js for operational workflows',
+      'Implemented REST APIs using Node.js for frontend-backend communication',
+      'Reduced system latency by 40%',
+      'Introduced real-time notification infrastructure using WebSockets improving user engagement',
+      'Managed production deployments and server configuration across Linux VPS environments',
+    ],
+    technologies: ['Node.js', 'React', 'REST APIs', 'WebSockets', 'Linux', 'VPS'],
+  },
+  {
+    id: 4,
+    title: 'Full Stack Developer',
+    company: 'Techsparagus',
+    location: 'Aurangabad, India',
+    duration: 'Feb 2022 – Feb 2023',
+    current: false,
+    description: 'Engineered REST APIs and real-time systems for mobile and web applications.',
+    achievements: [
+      'Engineered REST APIs supporting mobile and web applications handling thousands of API requests daily',
+      'Developed responsive frontend components using React.js for desktop and mobile',
+      'Integrated frontend applications with backend services through REST APIs',
+      'Introduced real-time messaging and notification systems using WebSockets',
+      'Structured scalable MongoDB and MySQL database schemas improving query performance',
+    ],
+    technologies: ['Node.js', 'React', 'MongoDB', 'MySQL', 'WebSockets', 'REST APIs'],
+  },
+  {
+    id: 5,
+    title: 'Junior Full Stack Developer',
+    company: 'Vaibhav Consulting Services',
+    location: 'Aurangabad, India',
+    duration: 'Dec 2019 – Jan 2022',
+    current: false,
+    description: 'Contributed to ERP modules and casino-style gaming systems.',
+    achievements: [
+      'Contributed to ERP modules including billing, inventory management, and financial reporting',
+      'Created backend logic for casino-style gaming systems including betting engines and wallet tracking',
+      'Built desktop business tools using Electron.js improving operational efficiency',
+    ],
+    technologies: ['Node.js', 'Electron.js', 'JavaScript', 'MySQL'],
+  },
+];
+
+const education = [
+  {
+    degree: 'Bachelor of Engineering — Computer Science',
+    institution: 'Dr. Babasaheb Ambedkar Marathwada University',
+    location: 'Aurangabad, India',
+  },
+];
 
 export default function Experience() {
-    const experiences = [
-        {
-            id: 1,
-            title: 'Senior Full Stack Developer',
-            company: 'Tech Solutions Inc.',
-            location: 'San Francisco, CA',
-            duration: 'Jan 2024 - Present',
-            type: 'Full-time',
-            current: true,
-            description: 'Leading development of scalable web applications and mentoring junior developers.',
-            responsibilities: [
-                'Architected and developed microservices-based applications serving 100K+ users',
-                'Led a team of 5 developers in building a real-time collaboration platform',
-                'Implemented CI/CD pipelines reducing deployment time by 60%',
-                'Mentored junior developers and conducted code reviews',
-                'Collaborated with product managers to define technical requirements'
-            ],
-            technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL'],
-            achievements: [
-                'Improved application performance by 40% through optimization',
-                'Reduced bug reports by 50% through better testing practices',
-                'Successfully delivered 3 major product releases on time'
-            ]
-        },
-        {
-            id: 2,
-            title: 'Full Stack Developer',
-            company: 'Digital Innovations Ltd.',
-            location: 'New York, NY',
-            duration: 'Mar 2022 - Dec 2023',
-            type: 'Full-time',
-            current: false,
-            description: 'Developed and maintained multiple client projects with focus on user experience.',
-            responsibilities: [
-                'Built responsive web applications using React and Node.js',
-                'Integrated third-party APIs and payment gateways',
-                'Optimized database queries improving response times by 30%',
-                'Collaborated with UI/UX designers to implement pixel-perfect designs',
-                'Participated in agile development processes and sprint planning'
-            ],
-            technologies: ['React', 'Express.js', 'MongoDB', 'Redux', 'Stripe', 'Jest'],
-            achievements: [
-                'Successfully delivered 15+ client projects',
-                'Achieved 95% client satisfaction rating',
-                'Reduced development time by 25% through reusable components'
-            ]
-        },
-        {
-            id: 3,
-            title: 'Frontend Developer',
-            company: 'WebCraft Studios',
-            location: 'Austin, TX',
-            duration: 'Jun 2021 - Feb 2022',
-            type: 'Full-time',
-            current: false,
-            description: 'Specialized in React development and creating interactive user interfaces.',
-            responsibilities: [
-                'Developed responsive web applications using React and modern JavaScript',
-                'Implemented state management solutions using Redux and Context API',
-                'Collaborated with backend developers to integrate REST APIs',
-                'Optimized applications for performance and accessibility',
-                'Maintained and updated existing codebases'
-            ],
-            technologies: ['React', 'JavaScript', 'CSS3', 'SASS', 'Webpack', 'Git'],
-            achievements: [
-                'Improved page load times by 35%',
-                'Enhanced user engagement by 20% through better UX',
-                'Maintained 100% code coverage in unit tests'
-            ]
-        },
-        {
-            id: 4,
-            title: 'Junior Developer',
-            company: 'StartupXYZ',
-            location: 'Remote',
-            duration: 'Sep 2020 - May 2021',
-            type: 'Full-time',
-            current: false,
-            description: 'Started my journey in web development with focus on learning fundamentals.',
-            responsibilities: [
-                'Learned and applied HTML, CSS, and JavaScript fundamentals',
-                'Built simple web applications and landing pages',
-                'Participated in code reviews and team meetings',
-                'Assisted senior developers with bug fixes and feature implementations',
-                'Contributed to documentation and knowledge sharing'
-            ],
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Git'],
-            achievements: [
-                'Completed 10+ small projects and assignments',
-                'Successfully transitioned from intern to full-time developer',
-                'Built strong foundation in web development principles'
-            ]
-        }
-    ];
+  return (
+    <div className="min-h-screen py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
+            Professional Experience
+          </h1>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            7+ years building scalable systems across healthcare, logistics, education, and SaaS
+          </p>
+        </motion.div>
 
-    const education = [
-        {
-            degree: 'Bachelor of Science in Computer Science',
-            institution: 'University of Technology',
-            location: 'California, USA',
-            duration: '2016 - 2020',
-            gpa: '3.8/4.0',
-            relevantCourses: ['Data Structures', 'Algorithms', 'Database Systems', 'Software Engineering', 'Web Development']
-        }
-    ];
+        {/* Timeline */}
+        <div className="relative">
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-zinc-700" />
 
-    const certifications = [
-        {
-            name: 'AWS Certified Developer - Associate',
-            issuer: 'Amazon Web Services',
-            date: '2023',
-            credentialId: 'AWS-DEV-123456'
-        },
-        {
-            name: 'React Developer Certification',
-            issuer: 'Meta',
-            date: '2022',
-            credentialId: 'META-REACT-789012'
-        },
-        {
-            name: 'MongoDB Certified Developer',
-            issuer: 'MongoDB University',
-            date: '2022',
-            credentialId: 'MONGODB-DEV-345678'
-        }
-    ];
-
-    return (
-        <div className="min-h-screen py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Page Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="relative flex gap-6"
+              >
+                <div
+                  className={`relative z-10 w-4 h-4 rounded-full mt-2 flex-shrink-0 ${
+                    exp.current ? 'bg-emerald-500' : 'bg-zinc-600'
+                  }`}
                 >
-                    <motion.h1
-                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-                    >
-                        Work{" "}
-                        <motion.span
-                            className="gradient-text-blue"
-                            whileHover={{
-                                scale: 1.1,
-                                rotate: [0, -5, 5, -5, 0],
-                                transition: { duration: 0.5 }
-                            }}
-                        >
-                            Experience
-                        </motion.span>
-                    </motion.h1>
-                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        My professional journey in software development, showcasing growth, achievements, and continuous learning.
-                    </p>
-                </motion.div>
+                  {exp.current && (
+                    <div className="absolute inset-0 w-4 h-4 bg-emerald-500 rounded-full animate-ping opacity-75" />
+                  )}
+                </div>
 
-                {/* Work Experience */}
-                <motion.section
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mb-20"
-                >
-                    <motion.h2
-                        className="text-4xl font-display font-bold text-white mb-12 text-center"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        Professional{" "}
-                        <motion.span
-                            className="gradient-text-purple"
-                            whileHover={{
-                                scale: 1.1,
-                                rotate: [0, -5, 5, -5, 0],
-                                transition: { duration: 0.5 }
-                            }}
-                        >
-                            Experience
-                        </motion.span>
-                    </motion.h2>
-                    <div className="space-y-8">
-                        {experiences.map((exp, index) => (
-                            <motion.div
-                                key={exp.id}
-                                initial={{ opacity: 0, x: -30 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 * index }}
-                                className="glass rounded-2xl p-8 hover:bg-gray-800/50 transition-all duration-300"
-                            >
-                                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                                    <div className="flex-1">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                                            {exp.current && (
-                                                <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-                                                    Current
-                                                </span>
-                                            )}
-                                        </div>
-                                        <div className="flex items-center gap-2 text-blue-400 font-semibold mb-2">
-                                            <Building size={18} />
-                                            {exp.company}
-                                        </div>
-                                        <div className="flex items-center gap-2 text-gray-400 mb-2">
-                                            <MapPin size={16} />
-                                            {exp.location}
-                                        </div>
-                                        <div className="flex items-center gap-2 text-gray-400 mb-4">
-                                            <Calendar size={16} />
-                                            {exp.duration} • {exp.type}
-                                        </div>
-                                        <p className="text-gray-300 mb-4">{exp.description}</p>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                    {/* Responsibilities */}
-                                    <div>
-                                        <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                                            <Code size={18} />
-                                            Key Responsibilities
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {exp.responsibilities.map((responsibility, idx) => (
-                                                <li key={idx} className="text-gray-300 flex items-start gap-2">
-                                                    <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                    {responsibility}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Achievements */}
-                                    <div>
-                                        <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                                            <Award size={18} />
-                                            Key Achievements
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {exp.achievements.map((achievement, idx) => (
-                                                <li key={idx} className="text-gray-300 flex items-start gap-2">
-                                                    <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                    {achievement}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                {/* Technologies */}
-                                <div className="mt-6">
-                                    <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {exp.technologies.map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-600 transition-colors duration-200"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                {/* Education */}
-                <motion.section
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mb-20"
-                >
-                    <motion.h2
-                        className="text-4xl font-display font-bold text-white mb-12 text-center"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        <motion.span
-                            className="gradient-text-green"
-                            whileHover={{
-                                scale: 1.1,
-                                rotate: [0, -5, 5, -5, 0],
-                                transition: { duration: 0.5 }
-                            }}
-                        >
-                            Education
-                        </motion.span>
-                    </motion.h2>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {education.map((edu, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 * index }}
-                                className="glass rounded-2xl p-8 hover:bg-gray-800/50 transition-all duration-300"
-                            >
-                                <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                                <div className="flex items-center gap-2 text-blue-400 font-semibold mb-2">
-                                    <Building size={18} />
-                                    {edu.institution}
-                                </div>
-                                <div className="flex items-center gap-2 text-gray-400 mb-2">
-                                    <MapPin size={16} />
-                                    {edu.location}
-                                </div>
-                                <div className="flex items-center gap-2 text-gray-400 mb-4">
-                                    <Calendar size={16} />
-                                    {edu.duration} • GPA: {edu.gpa}
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-semibold text-white mb-3">Relevant Coursework</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {edu.relevantCourses.map((course) => (
-                                            <span
-                                                key={course}
-                                                className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
-                                            >
-                                                {course}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                {/* Certifications */}
-                <motion.section
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="mb-20"
-                >
-                    <motion.h2
-                        className="text-4xl font-display font-bold text-white mb-12 text-center"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        <motion.span
-                            className="gradient-text-blue"
-                            whileHover={{
-                                scale: 1.1,
-                                rotate: [0, -5, 5, -5, 0],
-                                transition: { duration: 0.5 }
-                            }}
-                        >
-                            Certifications
-                        </motion.span>
-                    </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {certifications.map((cert, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 * index }}
-                                className="glass rounded-xl p-6 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105"
-                            >
-                                <div className="text-center">
-                                    <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Award className="w-8 h-8 text-blue-400" />
-                                    </div>
-                                    <h3 className="text-lg font-semibold text-white mb-2">{cert.name}</h3>
-                                    <p className="text-blue-400 font-medium mb-2">{cert.issuer}</p>
-                                    <p className="text-gray-400 text-sm mb-2">{cert.date}</p>
-                                    <p className="text-gray-500 text-xs">ID: {cert.credentialId}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                {/* Call to Action */}
-                <motion.section
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="text-center"
-                >
-                    <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-                        <motion.h2
-                            className="text-3xl font-display font-bold text-white mb-4"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                        >
-                            Ready to Work{" "}
-                            <motion.span
-                                className="gradient-text-purple"
-                                whileHover={{
-                                    scale: 1.1,
-                                    rotate: [0, -5, 5, -5, 0],
-                                    transition: { duration: 0.5 }
-                                }}
-                            >
-                                Together?
-                            </motion.span>
-                        </motion.h2>
-                        <p className="text-gray-300 mb-6">
-                            I bring a wealth of experience and a passion for creating exceptional digital experiences.
-                            Let&apos;s discuss how I can contribute to your next project.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="/contact"
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-                            >
-                                Get In Touch
-                            </a>
-                            <a
-                                href="/resume.pdf"
-                                download
-                                className="border-2 border-gray-600 hover:border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-                            >
-                                Download Resume
-                            </a>
+                <div className="flex-1 pb-12">
+                  <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-xl p-6 hover:border-zinc-600/50 transition-colors">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                        <div className="flex items-center gap-2 text-zinc-400 mt-1">
+                          <Building size={16} />
+                          {exp.company}
                         </div>
+                        <div className="flex items-center gap-2 text-zinc-500 text-sm mt-1">
+                          <MapPin size={14} />
+                          {exp.location}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-zinc-400 font-medium">{exp.duration}</span>
+                        {exp.current && (
+                          <span className="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 rounded text-sm">
+                            Current
+                          </span>
+                        )}
+                      </div>
                     </div>
-                </motion.section>
-            </div>
+
+                    <p className="text-zinc-400 mb-4">{exp.description}</p>
+
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                        <Award size={16} />
+                        Key Achievements
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.achievements.map((item, idx) => (
+                          <li key={idx} className="text-zinc-400 text-sm flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full mt-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-semibold text-white mb-2">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-zinc-700/50 text-zinc-400 rounded text-xs"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-    );
+
+        {/* Education */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h2 className="text-3xl font-display font-bold text-white mb-8 text-center">Education</h2>
+          <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-xl p-6">
+            {education.map((edu) => (
+              <div key={edu.degree}>
+                <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
+                <div className="flex items-center gap-2 text-zinc-400 mt-1">
+                  <Building size={16} />
+                  {edu.institution}
+                </div>
+                <div className="flex items-center gap-2 text-zinc-500 text-sm mt-1">
+                  <MapPin size={14} />
+                  {edu.location}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* CTA */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-xl p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
+            <p className="text-zinc-400 mb-6">
+              I bring 7+ years of full-stack experience. Let&apos;s discuss how I can contribute to your team.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="bg-white text-zinc-900 hover:bg-zinc-100 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              >
+                Get In Touch
+              </a>
+              <a
+                href="/Shaikh-Sameer-CV.pdf"
+                download
+                className="border border-zinc-600 hover:border-zinc-400 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
+        </motion.section>
+      </div>
+    </div>
+  );
 }
