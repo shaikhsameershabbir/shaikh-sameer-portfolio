@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Space_Grotesk } from "next/font/google";
+import { Inter, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,15 +7,15 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const poppins = Poppins({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  variable: "--font-outfit",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-space-grotesk",
 });
 
@@ -121,7 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable} font-sans antialiased text-[var(--text)]`}
+        className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased text-[var(--text)]`}
       >
         {children}
       </body>

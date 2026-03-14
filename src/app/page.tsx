@@ -307,10 +307,10 @@ export default function Home() {
       <motion.nav
         initial={{ y: -80 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)]/50 bg-[var(--bg)]/90 backdrop-blur-xl"
+        className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--bg)]/80 backdrop-blur-2xl"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <button onClick={() => handleNavClick('hero')} className="text-base sm:text-lg font-display font-semibold text-[var(--text)] hover:text-[var(--accent)] transition-colors">
+          <button onClick={() => handleNavClick('hero')} className="text-base sm:text-lg font-display font-semibold gradient-text hover:opacity-90 transition-opacity">
             Shaikh Sameer
           </button>
           <div className="hidden md:flex items-center gap-1">
@@ -330,7 +330,7 @@ export default function Home() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-[var(--accent)] text-black font-semibold text-sm hover:bg-[var(--accent-hover)] transition-colors"
+              className="btn-gradient flex items-center gap-2 px-4 py-2 rounded-xl text-black font-semibold text-sm"
             >
               <Download size={16} />
               <span className="hidden sm:inline">CV</span>
@@ -382,9 +382,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-muted)] text-[var(--accent)] text-xs sm:text-sm font-medium mb-6 sm:mb-8"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-[var(--accent)]/40 bg-[var(--accent-muted)] text-[var(--accent)] text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-[0_0_20px_-5px_rgba(245,158,11,0.25)]"
           >
-            <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
             Available for opportunities
           </motion.div>
 
@@ -401,7 +401,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, type: 'spring', stiffness: 100 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-[var(--text)] tracking-tight mb-3 sm:mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight mb-3 sm:mb-4 gradient-text"
           >
             Shaikh Sameer
           </motion.h1>
@@ -437,7 +437,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.65 + i * 0.05 }}
-                className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-muted)] text-xs sm:text-sm"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-white/5 border border-white/10 text-[var(--text-muted)] text-xs sm:text-sm hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-all duration-300"
               >
                 {tech}
               </motion.span>
@@ -453,7 +453,7 @@ export default function Home() {
             <a
               href={CV_URL}
               download
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[var(--accent)] text-black font-semibold hover:bg-[var(--accent-hover)] transition-all hover:scale-[1.02] active:scale-[0.98] text-sm sm:text-base"
+              className="btn-gradient inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-white font-semibold text-sm sm:text-base"
             >
               <Download size={18} className="flex-shrink-0" />
               <span className="hidden sm:inline">Download CV</span>
@@ -462,14 +462,14 @@ export default function Home() {
             <a
               href={COVER_LETTER_URL}
               download
-              className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[var(--border)] text-[var(--text)] font-medium hover:border-[var(--border-hover)] hover:bg-[var(--surface)] transition-all"
+              className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-[var(--text)] font-medium hover:border-[var(--accent)]/50 hover:bg-white/5 transition-all duration-300"
             >
               <FileText size={18} />
               Cover Letter
             </a>
             <button
               onClick={() => scrollTo('projects')}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-[var(--border)] text-[var(--text)] font-medium hover:border-[var(--border-hover)] hover:bg-[var(--surface)] transition-all text-sm sm:text-base"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-white/20 text-[var(--text)] font-medium hover:border-[var(--accent)]/50 hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
             >
               <Code size={18} className="flex-shrink-0" />
               Projects
@@ -529,32 +529,32 @@ export default function Home() {
       </section>
 
       {/* Stats - hidden on mobile (shown in About) */}
-      <section className="hidden sm:block py-12 sm:py-16 border-y border-[var(--border)]/50 bg-[var(--bg-elevated)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+      <section className="hidden sm:block py-16 sm:py-20 section-glow">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { value: '8+', label: 'Years Experience' },
               { value: '5+', label: 'Companies' },
-              { value: '20+', label: 'Projects' },
-          
+              { value: '10+', label: 'Projects' },
+              { value: '500+', label: 'Users Supported' },
             ].map((stat, i) => (
-              <motion.div key={stat.label} {...stagger(i)} className="text-center">
-                <div className="text-4xl font-bold text-[var(--text)] mb-1">{stat.value}</div>
+              <motion.div key={stat.label} {...stagger(i)} className="glass-card rounded-2xl p-6 sm:p-8 text-center">
+                <div className="text-4xl sm:text-5xl font-bold gradient-text mb-1">{stat.value}</div>
                 <div className="text-sm text-[var(--text-muted)]">{stat.label}</div>
               </motion.div>
-            ))}
+            ))} 
           </div>
         </div>
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 sm:py-24">
+      <section id="about" className="py-20 sm:py-28 section-glow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">About</h2>
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">About</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base">Professional summary</p>
           </motion.div>
-          <motion.div {...stagger(1)} className="max-w-2xl mx-auto space-y-6">
+          <motion.div {...stagger(1)} className="max-w-2xl mx-auto space-y-6 p-6 sm:p-8 rounded-2xl glass-card">
             <p className="text-[var(--text-muted)] leading-relaxed text-sm sm:text-base text-center">
               Senior Full Stack Developer with 8 years of experience delivering scalable backend systems and enterprise web applications. Specialized in Node.js architecture, real-time systems, and high-performance APIs with strong expertise in React and modern JavaScript frameworks.
             </p>
@@ -565,20 +565,20 @@ export default function Home() {
               <span className="text-[var(--text)]">Industries:</span> Healthcare, Logistics, Education, SaaS, ERP. <span className="text-[var(--text)]">Backend:</span> Node.js, Express, NestJS, REST APIs, WebSockets, microservices. <span className="text-[var(--text)]">Frontend:</span> React, Next.js, TypeScript, Tailwind.
             </p>
             <div className="grid grid-cols-2 gap-3 pt-4 sm:hidden">
-              <div className="text-center p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                <div className="text-lg font-bold text-[var(--accent)]">8+</div>
+              <div className="text-center p-4 rounded-2xl glass-card">
+                <div className="text-lg font-bold gradient-text">8+</div>
                 <div className="text-xs text-[var(--text-muted)]">Years</div>
               </div>
-              <div className="text-center p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                <div className="text-lg font-bold text-[var(--accent)]">5+</div>
+              <div className="text-center p-4 rounded-2xl glass-card">
+                <div className="text-lg font-bold gradient-text">5+</div>
                 <div className="text-xs text-[var(--text-muted)]">Companies</div>
               </div>
-              <div className="text-center p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                <div className="text-lg font-bold text-[var(--accent)]">10+</div>
+              <div className="text-center p-4 rounded-2xl glass-card">
+                <div className="text-lg font-bold gradient-text">10+</div>
                 <div className="text-xs text-[var(--text-muted)]">Projects</div>
               </div>
-              <div className="text-center p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                <div className="text-lg font-bold text-[var(--accent)]">500+</div>
+              <div className="text-center p-4 rounded-2xl glass-card">
+                <div className="text-lg font-bold gradient-text">500+</div>
                 <div className="text-xs text-[var(--text-muted)]">Users</div>
               </div>
             </div>
@@ -586,39 +586,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills */}
-      <section id="skills" className="py-16 sm:py-24 bg-[var(--bg-elevated)] border-y border-[var(--border)]/50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Skills</h2>
+      {/* Skills - Bento layout with category accents */}
+      <section id="skills" className="py-20 sm:py-28 section-glow">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">Skills</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base max-w-xl mx-auto">
               Languages, frameworks, databases, DevOps, cloud, and engineering practices
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+
+          {/* Category accent colors for visual variety */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 auto-rows-fr">
             {skillsWithIcons.map((skill, i) => {
               const Icon = skill.icon;
+              const accents = [
+                'from-amber-500/20 to-amber-600/5 border-l-amber-500/60',
+                'from-emerald-500/20 to-emerald-600/5 border-l-emerald-500/60',
+                'from-sky-500/20 to-sky-600/5 border-l-sky-500/60',
+                'from-violet-500/20 to-violet-600/5 border-l-violet-500/60',
+                'from-rose-500/20 to-rose-600/5 border-l-rose-500/60',
+                'from-cyan-500/20 to-cyan-600/5 border-l-cyan-500/60',
+                'from-orange-500/20 to-orange-600/5 border-l-orange-500/60',
+                'from-indigo-500/20 to-indigo-600/5 border-l-indigo-500/60',
+              ];
+              const iconAccents = [
+                'bg-amber-500/15 text-amber-400',
+                'bg-emerald-500/15 text-emerald-400',
+                'bg-sky-500/15 text-sky-400',
+                'bg-violet-500/15 text-violet-400',
+                'bg-rose-500/15 text-rose-400',
+                'bg-cyan-500/15 text-cyan-400',
+                'bg-orange-500/15 text-orange-400',
+                'bg-indigo-500/15 text-indigo-400',
+              ];
+              const accent = accents[i % accents.length];
+              const iconAccent = iconAccents[i % iconAccents.length];
               return (
                 <motion.div
                   key={skill.category}
                   {...stagger(i)}
-                  className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover"
+                  className={`group relative overflow-hidden rounded-2xl border-l-4 bg-gradient-to-br ${accent} border border-white/[0.06] p-5 sm:p-6 transition-all duration-300 hover:border-white/10 hover:shadow-[0_0_40px_-12px_rgba(245,158,11,0.15)]`}
                 >
-                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[var(--accent-muted)] flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent)]" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${iconAccent}`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold text-[var(--text)]">{skill.category}</h3>
+                    <h3 className="text-lg font-semibold text-[var(--text)]">{skill.category}</h3>
                   </div>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {skill.items.map((item) => {
                       const ItemIcon = skillToIcon[item] || Box;
                       return (
                         <span
                           key={item}
-                          className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-lg bg-[var(--surface-hover)] text-[var(--text-muted)] text-xs sm:text-sm border border-[var(--border)]/50"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/[0.04] text-[var(--text-muted)] text-xs sm:text-sm border border-white/[0.06] hover:border-white/10 hover:text-[var(--text)] hover:bg-white/[0.06] transition-all duration-200"
                         >
-                          <ItemIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 text-[var(--accent)]/80" />
+                          <ItemIcon className="w-3.5 h-3.5 flex-shrink-0 opacity-70" />
                           {item}
                         </span>
                       );
@@ -632,10 +656,10 @@ export default function Home() {
       </section>
 
       {/* Experience */}
-      <section id="experience" className="py-16 sm:py-24">
+      <section id="experience" className="py-20 sm:py-28 section-glow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Experience</h2>
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">Experience</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base">8 years across 5 companies</p>
           </motion.div>
           <div className="relative">
@@ -644,7 +668,7 @@ export default function Home() {
               {experiences.map((exp, i) => (
                 <motion.div key={exp.company} {...stagger(i)} className="relative flex gap-4 sm:gap-6 pl-10 sm:pl-12">
                   <div className={`absolute left-1.5 sm:left-2.5 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full ${exp.current ? 'bg-[var(--accent)]' : 'bg-[var(--border)]'}`} />
-                  <div className="flex-1 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover min-w-0">
+                  <div className="flex-1 p-4 sm:p-6 rounded-xl sm:rounded-2xl glass-card min-w-0">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3 sm:mb-4">
                       <div className="min-w-0">
                         <h3 className="text-lg sm:text-xl font-semibold text-[var(--text)]">{exp.title}</h3>
@@ -687,10 +711,10 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="py-16 sm:py-24 bg-[var(--bg-elevated)] border-y border-[var(--border)]/50">
+      <section id="projects" className="py-20 sm:py-28 section-glow">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Projects</h2>
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">Projects</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base max-w-2xl mx-auto">
               Enterprise platforms, SaaS products, and real-time systems — from education to food delivery
             </p>
@@ -708,7 +732,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="group relative"
                 >
-                  <div className="relative overflow-hidden p-5 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--border-hover)] transition-all duration-300 hover:shadow-[0_0_0_1px_var(--border-hover),0_24px_48px_-24px_rgba(0,0,0,0.4)]">
+                  <div className="relative overflow-hidden p-5 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl glass-card">
                     <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[var(--accent)]/0 via-[var(--accent)]/20 to-[var(--accent)]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
                     <span className="absolute top-4 right-4 sm:top-6 sm:right-6 text-[var(--text-subtle)]/40 text-xs sm:text-sm font-mono hidden sm:inline">
                       0{i + 1}
@@ -785,16 +809,16 @@ export default function Home() {
       </section>
 
       {/* Architecture */}
-      <section id="architecture" className="py-16 sm:py-24">
+      <section id="architecture" className="py-20 sm:py-28 section-glow">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Architecture</h2>
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">Architecture</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base max-w-xl mx-auto">
               System design, scalable backend, CI/CD, API security, and deployment practices
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <motion.div {...stagger(0)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover">
+            <motion.div {...stagger(0)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl glass-card">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent-muted)] flex items-center justify-center mb-3 sm:mb-4">
                 <Server className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent)]" />
               </div>
@@ -807,7 +831,7 @@ export default function Home() {
                 <li>• Real-time notification infra</li>
               </ul>
             </motion.div>
-            <motion.div {...stagger(1)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover">
+            <motion.div {...stagger(1)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl glass-card">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent-muted)] flex items-center justify-center mb-3 sm:mb-4">
                 <Database className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent)]" />
               </div>
@@ -820,7 +844,7 @@ export default function Home() {
                 <li>• VPS deployment</li>
               </ul>
             </motion.div>
-            <motion.div {...stagger(2)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover hidden md:block">
+            <motion.div {...stagger(2)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl glass-card hidden md:block">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent-muted)] flex items-center justify-center mb-3 sm:mb-4">
                 <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent)]" />
               </div>
@@ -829,7 +853,7 @@ export default function Home() {
                 JWT authentication, role-based authorization, secure transaction systems, server-side validation.
               </p>
             </motion.div>
-            <motion.div {...stagger(3)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--border)] card-hover hidden lg:block">
+            <motion.div {...stagger(3)} className="p-6 sm:p-8 rounded-xl sm:rounded-2xl glass-card hidden lg:block">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent-muted)] flex items-center justify-center mb-3 sm:mb-4">
                 <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent)]" />
               </div>
@@ -843,16 +867,16 @@ export default function Home() {
       </section>
 
       {/* Download */}
-      <section id="download" className="py-16 sm:py-24 bg-[var(--bg-elevated)] border-y border-[var(--border)]/50">
+      <section id="download" className="py-20 sm:py-28 section-glow">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Download</h2>
-            <p className="text-[var(--text-muted)] text-sm sm:text-base mb-6 sm:mb-8">CV and cover letter</p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold gradient-text mb-3 sm:mb-4">Download</h2>
+            <p className="text-[var(--text-muted)] text-sm sm:text-base mb-8 sm:mb-10">CV and cover letter</p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center">
               <a
                 href={CV_URL}
                 download
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--accent)] text-black font-semibold hover:bg-[var(--accent-hover)] transition-all"
+                className="btn-gradient inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-black font-semibold"
               >
                 <Download size={18} />
                 CV (PDF)
@@ -860,7 +884,7 @@ export default function Home() {
               <a
                 href={COVER_LETTER_URL}
                 download
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--border)] text-[var(--text)] font-medium hover:border-[var(--border-hover)] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl glass-card text-[var(--text)] font-medium"
               >
                 <FileText size={18} />
                 Cover Letter
@@ -871,15 +895,15 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 sm:py-24">
+      <section id="contact" className="py-20 sm:py-28 section-glow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div {...fadeUp} className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[var(--text)] mb-3 sm:mb-4">Contact</h2>
+          <motion.div {...fadeUp} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-3 sm:mb-4">Contact</h2>
             <p className="text-[var(--text-muted)] text-sm sm:text-base">Open to opportunities</p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-            <motion.div {...stagger(0)}>
+            <motion.div {...stagger(0)} className="p-6 sm:p-8 rounded-2xl glass-card">
               <h3 className="text-lg font-semibold text-[var(--text)] mb-6">Get in touch</h3>
               <div className="space-y-4">
                 <a href="mailto:samsk7774@gmail.com" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
@@ -905,19 +929,19 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div {...stagger(1)}>
+            <motion.div {...stagger(1)} className="p-6 sm:p-8 rounded-2xl glass-card">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[var(--text-muted)] mb-2">Name</label>
-                  <input id="name" name="name" required className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors" placeholder="Your name" />
+                  <input id="name" name="name" required className="w-full px-4 py-3 rounded-xl bg-[var(--bg)]/50 border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors" placeholder="Your name" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-[var(--text-muted)] mb-2">Email</label>
-                  <input id="email" name="email" type="email" required className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors" placeholder="you@example.com" />
+                  <input id="email" name="email" type="email" required className="w-full px-4 py-3 rounded-xl bg-[var(--bg)]/50 border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors" placeholder="you@example.com" />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-[var(--text-muted)] mb-2">Message</label>
-                  <textarea id="message" name="message" required rows={4} className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors resize-none" placeholder="Your message..." />
+                  <textarea id="message" name="message" required rows={4} className="w-full px-4 py-3 rounded-xl bg-[var(--bg)]/50 border border-[var(--border)] text-[var(--text)] placeholder-[var(--text-subtle)] focus:outline-none focus:border-[var(--accent)]/50 transition-colors resize-none" placeholder="Your message..." />
                 </div>
                 {formStatus === 'success' && (
                   <p className="text-[var(--success)] text-sm">Thanks! I&apos;ll get back to you soon.</p>
@@ -925,7 +949,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="w-full py-3 rounded-xl bg-[var(--accent)] text-black font-semibold hover:bg-[var(--accent-hover)] disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                  className="btn-gradient w-full py-4 rounded-xl text-black font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {formStatus === 'sending' ? (
                     <>
@@ -946,7 +970,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 border-t border-[var(--border)]/50">
+      <footer className="py-10 sm:py-14 section-glow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
           <p className="text-[var(--text-subtle)] text-sm">© {new Date().getFullYear()} Shaikh Sameer</p>
           <p className="text-[var(--text-subtle)] text-sm">Built with Next.js, TypeScript, Tailwind</p>
