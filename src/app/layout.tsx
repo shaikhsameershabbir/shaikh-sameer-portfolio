@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Space_Grotesk } from "next/font/google";
+import { Syne, JetBrains_Mono } from "next/font/google";
+import SmoothScroll from "@/components/providers/SmoothScroll";
+import CustomCursor from "@/components/providers/CustomCursor";
+import NoiseBg from "@/components/ui/NoiseBg";
 import "./globals.css";
 
-const inter = Inter({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-outfit",
-});
-
-const spaceGrotesk = Space_Grotesk({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  variable: "--font-jetbrains",
+  display: "swap",
 });
 
 const siteUrl = "https://shaikhsameer.com";
@@ -24,11 +24,12 @@ const siteUrl = "https://shaikhsameer.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Shaikh Sameer | Senior Full Stack Engineer — Node.js, React, System Design",
+    default:
+      "Shaikh Sameer | Full Stack Engineer — Node.js, React.js/Next.js",
     template: "%s | Shaikh Sameer",
   },
   description:
-    "Senior Full Stack Developer with 8 years of experience. Specialized in Node.js architecture, React, real-time systems, and scalable APIs. Available for opportunities.",
+    "Full Stack Engineer with 4+ years of experience building scalable enterprise applications, SaaS products and backend systems using Node.js and React.js.",
   keywords: [
     "Full Stack Developer",
     "Senior Software Engineer",
@@ -37,8 +38,6 @@ export const metadata: Metadata = {
     "TypeScript",
     "Next.js",
     "PostgreSQL",
-    "MongoDB",
-    "Microservices",
     "System Design",
     "Aurangabad",
     "India",
@@ -49,41 +48,31 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Shaikh Sameer | Senior Full Stack Engineer",
+    title: "Shaikh Sameer | Full Stack Engineer",
     description:
-      "8 years building scalable backend systems and enterprise web applications. Node.js, React, TypeScript, PostgreSQL.",
+      "4+ years building scalable enterprise applications, SaaS products and backend systems. Node.js, React.js, Next.js, TypeScript.",
     siteName: "Shaikh Sameer Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaikh Sameer | Senior Full Stack Engineer",
+    title: "Shaikh Sameer | Full Stack Engineer",
     description:
-      "7+ years building scalable backend systems and enterprise web applications. Node.js, React, TypeScript.",
+      "4+ years building scalable enterprise applications and SaaS products. Node.js, React.js, Next.js, TypeScript.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-  verification: {
-    // Add your verification codes when available
-    // google: "your-google-verification",
-    // yandex: "your-yandex-verification",
-  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: siteUrl },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Shaikh Sameer Shabbir",
-  jobTitle: "Senior Full Stack Engineer",
+  jobTitle: "Full Stack Engineer",
   url: siteUrl,
   email: "samsk7774@gmail.com",
   telephone: "+91-8379843464",
   sameAs: [
-    "https://linkedin.com/in/shaikh-sameer-39a584216",
+    "https://linkedin.com/in/shaikh-sameer07",
     "https://github.com/shaikhsameershabbir",
   ],
   knowsAbout: [
@@ -92,18 +81,7 @@ const jsonLd = {
     "TypeScript",
     "PostgreSQL",
     "MongoDB",
-    "Microservices",
     "System Design",
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Dr. Babasaheb Ambedkar Marathwada University",
-    address: "Aurangabad, India",
-  },
-  workExample: [
-    { "@type": "SoftwareSourceCode", name: "StudyPulse" },
-    { "@type": "SoftwareSourceCode", name: "Indian Design Editing Platform" },
-    { "@type": "SoftwareSourceCode", name: "POST EAT" },
   ],
 };
 
@@ -113,17 +91,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${syne.variable} ${jetbrains.variable} dark`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased text-[var(--text)]`}
-      >
-        {children}
+      <body className="min-h-screen bg-bg font-mono antialiased text-muted">
+        <SmoothScroll>
+          <NoiseBg />
+          <CustomCursor />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

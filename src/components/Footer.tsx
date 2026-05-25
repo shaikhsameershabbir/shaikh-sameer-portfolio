@@ -1,94 +1,9 @@
-'use client';
-
-import Link from 'next/link';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
-
-const quickLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Experience', href: '/experience' },
-  { name: 'Contact', href: '/contact' },
-];
-
-const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/shaikhsameershabbir', icon: Github },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/shaikh-sameer-39a584216', icon: Linkedin },
-  { name: 'Email', href: 'mailto:samsk7774@gmail.com', icon: Mail },
-];
-
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-xl font-display font-bold text-white">Shaikh Sameer</h3>
-            <p className="text-zinc-400 text-sm">
-              Senior Full Stack Developer with 7+ years of experience. Node.js, React, TypeScript, PostgreSQL.
-            </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors"
-                    aria-label={social.name}
-                  >
-                    <Icon size={20} />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1 text-sm"
-                  >
-                    {link.name}
-                    <ExternalLink size={12} className="opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Contact</h4>
-            <div className="space-y-2 text-sm">
-              <p className="text-zinc-400">
-                <span className="font-medium text-zinc-300">Email:</span> samsk7774@gmail.com
-              </p>
-              <p className="text-zinc-400">
-                <span className="font-medium text-zinc-300">Phone:</span> +91-8379843464
-              </p>
-              <p className="text-zinc-400">
-                <span className="font-medium text-zinc-300">Location:</span> Aurangabad, India
-              </p>
-              <p className="text-zinc-400">
-                <span className="font-medium text-zinc-300">Status:</span> Open to opportunities
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-zinc-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm">© {currentYear} Shaikh Sameer. All rights reserved.</p>
-          <p className="text-zinc-500 text-sm">Built with Next.js, TypeScript & Tailwind CSS</p>
-        </div>
-      </div>
+    <footer className="border-t border-white/5 py-8">
+      <p className="text-center font-mono text-xs text-muted/50">
+        © 2026 Shaikh Sameer · Built with Next.js · TypeScript · Tailwind
+      </p>
     </footer>
   );
 }
